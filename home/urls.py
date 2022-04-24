@@ -4,5 +4,6 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', HandleFileUpload.as_view(),name="handle_file_view"),
+    path('',home,name='home'),
+    path('download/<uid>/',download,name="download"),
 ]

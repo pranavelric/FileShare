@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.conf import settings
+
 from django.contrib import admin
 from django.urls import path,include
 from home.views import HandleFileUpload
@@ -26,7 +27,8 @@ router.register(r'handle',HandleFileUpload)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(router.urls))
+    path('api/',include(router.urls)),
+    path('',include('home.urls'))
 ]
 
 if settings.DEBUG:

@@ -7,13 +7,19 @@ from rest_framework.response import Response
 from .api.serializers import *
 from rest_framework import status
 
+
+def home(request):
+    return render(request,'home/home.html')
+
+def download(request,uid):
+    return render(request,'home/download.html',context={"uid":uid})
+
 class HandleFileUpload(ModelViewSet):
     serializer_class = FileListSerializer
     queryset = File.objects.all()
 
 
     def create(self,request):
-
         try:
             data=  request.data
             serializer = FileListSerializer(data= data)

@@ -2,7 +2,6 @@ from rest_framework_json_api import serializers
 import shutil
 from ..models import Folder,File
 from collections import *
-
 from rest_framework.fields import  SkipField
 from rest_framework.relations import  PKOnlyObject
 
