@@ -3,11 +3,11 @@ from .models import File,Folder
 
 @admin.register(File)
 class FileAdmin(admin.ModelAdmin):
-    fields =('folder','file')
+    fields =('folder','files')
 
 
 
 @admin.register(Folder)
 class FileAdmin(admin.ModelAdmin):
-    fields =('uid','created_at')
+     readonly_fields=('uid','created_at')
 
